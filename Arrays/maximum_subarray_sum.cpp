@@ -46,40 +46,78 @@
 
 // Time complexity : O(n^2) Space Complexity : O(n)
 
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main() 
+// {
+//   int n;
+//   cin >> n;
+   
+//   int a[n];
+
+//   for(int i=0;i<n;i++)
+//   {
+//     cin >> a[i];
+//   }
+   
+//   int prefixSum[n] = {0};
+//   prefixSum[0] = a[0];
+
+//   for(int i=1;i<n;i++)
+//   {
+//     prefixSum[i] = prefixSum[i-1] + a[i]; // calculating the prefix sum
+//   }
+  
+//   int maxSubarraySum = INT_MIN;
+//   for(int i=0;i<n;i++)
+//   {
+//     for(int j=i;j<n;j++)
+//     {
+//       int currentSubarraySum = i > 0 ? (prefixSum[j] - prefixSum[i-1]) : prefixSum[j]; // checking for index out of bound
+//       maxSubarraySum = max(maxSubarraySum, currentSubarraySum); // updating the subarray sum
+//     }
+//   }
+
+//   cout << maxSubarraySum << "\n";
+//   return 0;
+
+// }
+
+// Approach - 3 (Using Kadane's Algorithm)
+
+// Time Complexity : O(n) and Space Complexity : O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 
-int main() 
+int findMaximumSubarraySum(int a[], int n)
+{
+  int currentSum = 0, maxSubarraySum = INT_MIN;
+
+  for(int i=0;i<n;i++)
+  {
+    currentSum = currentSum + a[i];
+    maxSubarraySum = max(currentSum, maxSubarraySum);
+    currentSum = max(currentSum, 0); // For negative numbers
+  }
+  return maxSubarraySum;
+}
+
+int main()
 {
   int n;
   cin >> n;
-   
+
   int a[n];
 
   for(int i=0;i<n;i++)
   {
     cin >> a[i];
   }
-   
-  int prefixSum[n] = {0};
-  prefixSum[0] = a[0];
 
-  for(int i=1;i<n;i++)
-  {
-    prefixSum[i] = prefixSum[i-1] + a[i]; // calculating the prefix sum
-  }
-  
-  int maxSubarraySum = INT_MIN;
-  for(int i=0;i<n;i++)
-  {
-    for(int j=i;j<n;j++)
-    {
-      int currentSubarraySum = i > 0 ? (prefixSum[j] - prefixSum[i-1]) : prefixSum[j]; // checking for index out of bound
-      maxSubarraySum = max(maxSubarraySum, currentSubarraySum); // updating the subarray sum
-    }
-  }
-
-  cout << maxSubarraySum << "\n";
+  cout << findMaximumSubarraySum(a,n) << "\n";
   return 0;
-
 }
+
+
