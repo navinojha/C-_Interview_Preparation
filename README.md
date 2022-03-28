@@ -5,3 +5,4 @@
 - [x] Largest Element in an Array
 - [x] Maximum Subarray Sum
 - [x] Rotate Array by K units (Clockwise)
+- [x] Maximize the Expression
