@@ -2,6 +2,5 @@
 
 # Arrays
 
-#### 1) Largest Element in an Array
-
-#### 2) Maximum Subarray Sum
+- [x] Largest Element in an Array
+- [x] Maximum Subarray Sum
