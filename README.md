@@ -1,8 +1,8 @@
-# C-\_Interview_Preparation
+# C-\_Interview_Preparation (75 Days coding challenge)
 
 # Arrays
 
-- [x] Largest Element in an Array
-- [x] Maximum Subarray Sum
-- [x] Rotate Array by K units (Clockwise)
-- [x] Maximize the Expression
+- [x] Day-01
+- [x] Day-02
+- [x] Day-03
+- [x] Day-04
